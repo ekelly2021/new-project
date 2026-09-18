@@ -1,0 +1,59 @@
+PRD — Review Rescue v1.2 — Focused MVP
+1. Product Overview
+Review Rescue is a focused, Google-first review-response application for busy local business owners. When a new Google review appears, Review Rescue helps the owner quickly understand whether it needs attention, generates an appropriate AI-assisted response, and allows the owner to review, edit, regenerate, approve, or dismiss the response.
+Core promise: Tell me what needs my attention, give me a strong reply, and let me handle it in seconds.
+Review Rescue is developed under Erica Kelly Consulting (EKC) and may serve as a natural entry point into deeper consulting conversations when recurring customer feedback reveals operational, customer-experience, or strategic issues.
+2. Target User
+Primary user: owner, founder, general manager, or designated manager of an established local business that receives Google reviews regularly, has approximately 5–30 employees, does not have dedicated reputation-management staff, currently handles reviews manually or inconsistently, wants faster responses without purchasing a large reputation-management suite, and values maintaining human control over customer-facing responses.
+Initial market: Google Business Profile users only. Do not optimize the MVP for enterprise, agencies, franchises, or large multi-location businesses.
+3. Problem Statement
+Busy business owners know customer reviews affect reputation, trust, and purchasing decisions, but review management often becomes another task competing for limited attention. Existing solutions may introduce large feature sets, complex dashboards, higher recurring costs, unnecessary functionality for smaller businesses, and additional administrative work.
+The owner’s fundamental need is simpler: know when something important happens, understand what requires attention, respond appropriately, and move on.
+4. MVP Success Outcome
+The MVP succeeds when a real business owner can: receive or view a newly detected Google review; immediately understand whether it requires attention; receive an appropriate AI-generated response draft; edit, regenerate, approve, or dismiss that draft; clearly see that the review has been handled; and complete the workflow quickly without navigating a complex dashboard.
+5. P0 — MVP Capabilities
+P0.1 New Review Alert + Smart Triage
+When a new Google review is received, Review Rescue identifies it and assigns a simple attention state: Needs reply, Needs personal attention, or Handled. Reviews should not all appear equally urgent. The system should consider star rating, written review content, and potentially sensitive language. For the prototype, simulated review data may be used if live Google integration is not yet available.
+P0.2 AI Draft → Human Review → Response
+For every non-sensitive review, Review Rescue generates a contextual response draft. The user can approve, edit, regenerate, or dismiss. Response logic should adapt to rating and available text: 4–5 star reviews with text receive a concise, warm, personalized appreciation response that references relevant details without overdoing it; 4–5 star reviews without text receive a short appreciative response that acknowledges the rating without inventing context; 1–3 star reviews receive an empathetic, issue-aware response appropriate to the available information. No AI-generated response should be published without a user intentionally approving it. Suggested internal fields: acknowledged_by, acknowledged_at, sent_at, response_status. Acknowledgment tracking is supporting system behavior, not a separate marketed MVP feature.
+P0.3 Sensitive Review Flag + Escalation
+Potentially sensitive reviews — such as threats, discrimination allegations, serious refund/payment disputes, legal claims, safety allegations, or highly sensitive complaints — should be marked Needs personal attention. The user receives a clear, calm notification. Do not attempt sophisticated legal classification in the MVP; use simple rule-based or AI-assisted sensitivity detection sufficient to demonstrate the workflow.
+P0.4 Lightweight Review History
+Display reviewer name, rating, review text, date, status, and response status. Primary statuses: Needs reply, Needs personal attention, Handled, Dismissed. Do not build a full analytics dashboard.
+6. Core User Flow
+New review → Review Rescue triages it → AI generates response draft → owner opens review → owner approves, edits, regenerates, or dismisses → approved response is posted or prepared for posting → status changes to Handled.
+7. Sensitive Review Flow
+New review → Review Rescue flags it → status becomes Needs personal attention → user receives notification → user opens review → user determines response → user marks matter handled.
+8. Star-Only Reviews
+Star-only reviews are not a standalone P0 capability. Display them normally, include them in triage, and generate an appropriate public response based on rating. For 4–5 star-only reviews, generate a brief appreciative response without inventing details. For 1–3 star-only reviews, generate a careful response that acknowledges the rating and invites appropriate follow-up without assuming what went wrong. Broader post-review nurturing is deferred beyond MVP.
+9. P1 — After MVP Validation
+Customizable business tone/brand voice; additional notification preferences; richer history/filtering; recurring complaint/theme detection; basic feedback pattern recognition; additional review platforms such as Yelp or Facebook; optional post-review nurture workflows such as referral requests, loyalty follow-up, or re-engagement only after MVP validation.
+10. P2 — Future Expansion
+Multi-location management; agency accounts; franchise support; advanced analytics; sentiment trends; broader review-platform aggregation; executive dashboards; customer-feedback pattern detection; operational issue identification.
+Strategic EKC bridge: a future version may identify recurring themes such as scheduling complaints, communication problems, billing confusion, service delays, or recurring customer-experience issues and surface them as potential Grow / Fix / Stop consulting opportunities. This is not part of the October MVP.
+11. Design Principles
+Approachable, calm, trustworthy, fast, human-controlled, mobile-first. One obvious primary action per screen. Avoid dense dashboards, reputation-management jargon, excessive settings, manufactured urgency, and enterprise-style complexity. Visual direction should remain consistent with the approved Review Rescue concept shown in the MVP and pitch visuals: soft green as the primary brand signal, warm neutral backgrounds, restrained amber/red accents for caution/escalation, and the Review Rescue speech-bubble/star logo motif. Detailed visual specifications belong in DESIGN-ReviewRescue.md; this PRD defines only the required product-level brand direction.
+12. Product Positioning
+Do not position Review Rescue simply as “AI that responds to reviews.” Position around attention + speed + simplicity + human control.
+Primary positioning concept: Review Rescue shows busy business owners what needs their attention, prepares the right kind of response for every review, and helps them handle it in seconds — without another complicated reputation-management platform. Relationship promise: respond appropriately across the full review spectrum, including reinforcing positive customer relationships through timely, personalized appreciation.
+13. EKC Relationship
+Review Rescue has its own product identity. Use the credibility line: Review Rescue — an Erica Kelly Consulting company. Review Rescue should be featured on EKC’s landing page/site as a product or proof of applied AI capability. It should not replace EKC’s broader positioning.
+14. Explicitly Out of Scope for MVP
+Do not build Yelp integration, Uber Eats integration, Facebook integration, TripAdvisor integration, full sentiment analytics, multi-location management, franchise functionality, agency functionality, automatic autonomous posting, extensive reporting dashboards, advanced recurring-pattern analysis, complete EKC consulting integration, Strategy Pulse integration, complex role/permission architecture, CRM-style nurture journeys, loyalty campaigns, referral automations, email/SMS re-engagement, or other post-review lifecycle campaigns.
+15. Build Priority
+Prioritize: 1) working end-to-end user flow, 2) clarity, 3) speed, 4) trust/human approval, 5) mobile usability, 6) polish. If a proposed feature threatens delivery speed without being necessary to demonstrate the core product value, defer it.
+16. Definition of Done — MVP Prototype
+A tester can complete this scenario without assistance: New review → understand urgency → view AI response → edit/regenerate if desired → approve/dismiss → see handled state.
+Tester questions:
+1. Did you immediately understand what Review Rescue does?
+2. Was anything confusing?
+3. Would this save you time?
+4. Would you trust yourself to use it with real reviews?
+5. What, if anything, stopped you from completing the workflow?
+Do not add features merely because a tester suggests them. Capture new ideas in the product parking lot and evaluate later using WSJF.
+17. Launch Target
+Internal target: October 21, 2026.
+Public commitment: October 28, 2026.
+Maintain the October 21 internal date as the working deadline to preserve a one-week contingency buffer.
+Claude Code Instruction
+Treat this PRD v1.2 as authoritative and update the existing Review Rescue prototype rather than rebuilding from scratch. Preserve working functionality and the existing design system. First provide a concise gap analysis: Current Build → PRD v1.2 → Exact changes required. Then implement only the P0 changes. Ensure response behavior covers 4–5 star reviews with and without text, 1–3 star reviews with and without text, and sensitive-review escalation. Preserve the approved Review Rescue visual direction and logo motif; do not redesign the brand. Do not add P1/P2 functionality.

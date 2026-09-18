@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; }
+    a { color: #2E8B6F; }
+    a:hover { color: #1F6E54; }
+  </style>
+</helmet>
+
+<div style="font-family:Inter,sans-serif;color:#2B2E33;background:#FAFAF7;">
+
+  <div style="max-width:1120px;margin:0 auto;padding:24px 24px 0 24px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="width:28px;height:28px;border-radius:8px;background:#E8A33D;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#2B2E33;">RR</span>
+      <span style="font-weight:700;font-size:16px;">Review Rescue</span>
+    </div>
+    <a href="Review Rescue Landing Page.dc.html" style="text-decoration:none;background:#2B2E33;color:#FAFAF7;font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;">Back to home</a>
+  </div>
+
+  <div style="max-width:760px;margin:0 auto;padding:56px 24px 40px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
+    <span style="font-size:13px;font-weight:600;color:#1F6E54;background:#E3F1EC;border-radius:999px;padding:6px 14px;">Integrations</span>
+    <h1 style="font-size:38px;line-height:1.2;font-weight:700;margin:0;text-wrap:pretty;">Where Review Rescue watches — today and next.</h1>
+    <p style="font-size:16px;line-height:1.55;color:#5C6169;margin:0;max-width:560px;">Review Rescue connects to the places your customers actually leave reviews, so alerts and drafts show up without you checking each platform yourself.</p>
+  </div>
+
+  <div style="max-width:1120px;margin:0 auto;padding:16px 24px 72px 24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;">
+    <sc-for list="{{ platforms }}" as="p" hint-placeholder-count="3">
+      <div style="background:#FFFFFF;border:1px solid #EEEFF1;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <span style="width:44px;height:44px;border-radius:12px;background:{{ p.dotBg }};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:{{ p.dotColor }};">{{ p.initial }}</span>
+          <span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:{{ p.badgeBg }};color:{{ p.badgeColor }};white-space:nowrap;">{{ p.badgeLabel }}</span>
+        </div>
+        <span style="font-size:17px;font-weight:700;">{{ p.name }}</span>
+        <span style="font-size:14px;line-height:1.55;color:#5C6169;">{{ p.body }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="background:#F3F3EF;padding:64px 24px;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <h2 style="font-size:26px;font-weight:700;text-align:center;margin:0 0 40px 0;">How the connection works</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;">
+        <sc-for list="{{ steps }}" as="step" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:13px;font-weight:700;color:#2E8B6F;">STEP {{ step.n }}</span>
+            <span style="font-size:18px;font-weight:700;">{{ step.title }}</span>
+            <span style="font-size:14px;line-height:1.55;color:#5C6169;">{{ step.body }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1120px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <h2 style="font-size:26px;font-weight:700;margin:0;">Alerts reach you where you already are</h2>
+      <p style="font-size:15px;line-height:1.6;color:#5C6169;margin:0;">Every connected platform routes through the same two channels — no separate app to check.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <sc-for list="{{ channels }}" as="c" hint-placeholder-count="2">
+        <div style="background:#FFFFFF;border:1px solid #EEEFF1;border-radius:12px;padding:18px 20px;display:flex;align-items:center;gap:14px;">
+          <span style="width:38px;height:38px;border-radius:10px;background:#E3F1EC;flex:none;"></span>
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <span style="font-size:15px;font-weight:700;">{{ c.name }}</span>
+            <span style="font-size:13px;color:#5C6169;">{{ c.body }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="background:#F3F3EF;padding:64px 24px;">
+    <div style="max-width:760px;margin:0 auto;">
+      <h2 style="font-size:26px;font-weight:700;text-align:center;margin:0 0 32px 0;">Integration questions</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="3">
+          <div style="background:#FFFFFF;border:1px solid #EEEFF1;border-radius:12px;padding:18px 20px;">
+            <div onClick="{{ faq.onToggle }}" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:12px;">
+              <span style="font-size:15px;font-weight:600;">{{ faq.q }}</span>
+              <span style="font-size:18px;color:#8A8F98;flex:none;">{{ faq.icon }}</span>
+            </div>
+            <sc-if value="{{ faq.open }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size:14px;line-height:1.55;color:#5C6169;margin:12px 0 0 0;">{{ faq.a }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div id="waitlist" style="max-width:700px;margin:0 auto;padding:80px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;">
+    <h2 style="font-size:28px;font-weight:700;margin:0;">Want Yelp or Facebook sooner?</h2>
+    <p style="font-size:15px;color:#5C6169;margin:0;max-width:480px;">Tell us which platform matters most to your business — it shapes what we connect next.</p>
+    <a href="#" onClick="{{ noop }}" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px;">Join the waitlist</a>
+  </div>
+
+  <div style="border-top:1px solid #EEEFF1;padding:28px 24px;text-align:center;">
+    <span style="font-size:13px;color:#8A8F98;">Review Rescue — an Erica Kelly Consulting company</span>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { openFaq: 0 };
+
+  renderVals() {
+    const s = this.state;
+    const platforms = [
+      { initial: 'G', name: 'Google Business Profile', dotBg: '#2E8B6F', dotColor: '#FFFFFF', badgeLabel: 'Live', badgeBg: '#1F6E54', badgeColor: '#FFFFFF', body: 'Full support today — instant alerts on any new review, AI drafts, and direct posting back to Google where the API allows it.' },
+      { initial: 'Y', name: 'Yelp', dotBg: '#EEEFF1', dotColor: '#5C6169', badgeLabel: 'Planned', badgeBg: '#EEEFF1', badgeColor: '#5C6169', body: "Next up after Google. Same alert-and-draft flow, so you're not switching tools to keep up with Yelp reviews." },
+      { initial: 'f', name: 'Facebook', dotBg: '#EEEFF1', dotColor: '#5C6169', badgeLabel: 'Planned', badgeBg: '#EEEFF1', badgeColor: '#5C6169', body: 'Facebook recommendations and reviews join the same inbox, with the same acknowledge-then-send rule.' }
+    ];
+    const steps = [
+      { n: 1, title: 'Connect your profile', body: 'Link your Google Business Profile in a few minutes — no developer needed.' },
+      { n: 2, title: 'We watch in the background', body: "Review Rescue checks for new reviews continuously so you don't have to." },
+      { n: 3, title: 'You get the alert, not the busywork', body: 'A new review triggers an alert and a draft — the platform detail stays out of your way.' }
+    ];
+    const channels = [
+      { name: 'SMS', body: 'A text the moment a review needs you — especially the ones that can\'t wait.' },
+      { name: 'Email', body: 'The same alert, with the full review and draft ready to open.' }
+    ];
+    const faqData = [
+      { q: 'Why start with Google only?', a: "Google Business Profile is where most small businesses get the bulk of their reviews, and its API access takes verification lead time to set up — we're confirming that early so it doesn't block the rest of the build." },
+      { q: 'Will I need to reconnect anything when Yelp or Facebook launch?', a: 'No — new platforms plug into the same inbox and alert settings you already have.' },
+      { q: 'Can an agency connect multiple business accounts?', a: 'Not in this version. Review Rescue is built for a single business today; multi-account support is a later-stage idea, not on the current roadmap.' }
+    ];
+    const faqs = faqData.map((f, i) => ({ ...f, open: s.openFaq === i, icon: s.openFaq === i ? '–' : '+', onToggle: () => this.setState({ openFaq: s.openFaq === i ? -1 : i }) }));
+    return { platforms, steps, channels, faqs, noop: e => e.preventDefault() };
+  }
+}
+
+</script>
+</body>
+</html>
