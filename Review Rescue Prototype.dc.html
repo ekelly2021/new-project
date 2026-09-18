@@ -453,7 +453,8 @@ class Component extends DCLogic {
 
   constructor(props) {
     super(props);
-    this.state = { ...this.state, reviews: this.initialReviews() };
+    const isPhone = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+    this.state = { ...this.state, device: isPhone ? 'mobile' : 'desktop', screen: isPhone ? 'lock' : 'inbox', reviews: this.initialReviews() };
   }
 
   badgeInfo(r) {

@@ -99,7 +99,7 @@
   </div>
 
   <div id="waitlist" style="max-width:700px;margin:0 auto;padding:80px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;">
-    <h2 style="font-size:28px;font-weight:700;margin:0;">Want Yelp or Facebook sooner?</h2>
+    <h2 style="font-size:28px;font-weight:700;margin:0;">Want Trustpilot, Yelp, or Facebook sooner?</h2>
     <p style="font-size:15px;color:#5C6169;margin:0;max-width:480px;">Tell us which platform matters most to your business — it shapes what we connect next.</p>
     <a href="#" onClick="{{ noop }}" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px;">Join the waitlist</a>
   </div>
@@ -119,7 +119,8 @@ class Component extends DCLogic {
     const s = this.state;
     const platforms = [
       { initial: 'G', name: 'Google Business Profile', dotBg: '#2E8B6F', dotColor: '#FFFFFF', badgeLabel: 'Live', badgeBg: '#1F6E54', badgeColor: '#FFFFFF', body: 'Full support today — instant alerts on any new review, AI drafts, and direct posting back to Google where the API allows it.' },
-      { initial: 'Y', name: 'Yelp', dotBg: '#EEEFF1', dotColor: '#5C6169', badgeLabel: 'Planned', badgeBg: '#EEEFF1', badgeColor: '#5C6169', body: "Next up after Google. Same alert-and-draft flow, so you're not switching tools to keep up with Yelp reviews." },
+      { initial: 'T', name: 'Trustpilot', dotBg: '#EEEFF1', dotColor: '#5C6169', badgeLabel: 'Planned', badgeBg: '#EEEFF1', badgeColor: '#5C6169', body: "A natural fit for online-first and e-commerce businesses. Trustpilot's reply API requires becoming an approved integration partner, so timing depends on their review process." },
+      { initial: 'Y', name: 'Yelp', dotBg: '#EEEFF1', dotColor: '#5C6169', badgeLabel: 'Planned', badgeBg: '#EEEFF1', badgeColor: '#5C6169', body: "Yelp's reply API exists but is currently limited to Yelp Partner/Enterprise accounts, so this one depends on partner approval timing." },
       { initial: 'f', name: 'Facebook', dotBg: '#EEEFF1', dotColor: '#5C6169', badgeLabel: 'Planned', badgeBg: '#EEEFF1', badgeColor: '#5C6169', body: 'Facebook recommendations and reviews join the same inbox, with the same acknowledge-then-send rule.' }
     ];
     const steps = [
@@ -133,7 +134,7 @@ class Component extends DCLogic {
     ];
     const faqData = [
       { q: 'Why start with Google only?', a: "Google Business Profile is where most small businesses get the bulk of their reviews, and its API access takes verification lead time to set up — we're confirming that early so it doesn't block the rest of the build." },
-      { q: 'Will I need to reconnect anything when Yelp or Facebook launch?', a: 'No — new platforms plug into the same inbox and alert settings you already have.' },
+      { q: 'Which review platform is supported next?', a: "Google leads since the app is already built around it. Trustpilot and Yelp both require becoming an approved integration partner with their teams before reply access is granted, so their timing depends on that review process rather than build time. Platforms are added one at a time, not all at once, so each integration gets done right." },
       { q: 'Can an agency connect multiple business accounts?', a: 'Not in this version. Review Rescue is built for a single business today; multi-account support is a later-stage idea, not on the current roadmap.' }
     ];
     const faqs = faqData.map((f, i) => ({ ...f, open: s.openFaq === i, icon: s.openFaq === i ? '–' : '+', onToggle: () => this.setState({ openFaq: s.openFaq === i ? -1 : i }) }));

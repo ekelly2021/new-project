@@ -25,7 +25,7 @@
       <span style="font-weight:700;font-size:16px;">Review Rescue</span>
     </div>
     <div style="display:flex;align-items:center;gap:24px;">
-      <a href="Review Rescue Prototype.dc.html" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;">Test the prototype</a>
+      <span style="font-size:13px;font-weight:600;color:#5C6169;background:#F3F3EF;border-radius:999px;padding:8px 16px;">For testers</span>
     </div>
   </div>
 
@@ -35,10 +35,10 @@
       <h1 style="font-size:44px;line-height:1.15;font-weight:700;margin:0;text-wrap:pretty;">Know what needs attention. Respond appropriately. Strengthen every customer relationship.</h1>
       <p style="font-size:17px;line-height:1.55;color:#5C6169;margin:0;max-width:520px;">Review Rescue helps busy business owners quickly respond to positive, negative, and sensitive customer reviews — with AI-assisted drafts and human approval.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;align-items:center;">
-        <a href="Review Rescue Prototype.dc.html" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:16px;font-weight:700;padding:16px 28px;border-radius:10px;">Test the live prototype →</a>
-        <a href="#" style="text-decoration:none;color:#5C6169;font-size:14px;font-weight:600;">Give feedback</a>
+        <a href="#how-it-works" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:16px;font-weight:700;padding:16px 28px;border-radius:10px;">See how it works ↓</a>
+        <a href="#waitlist" style="text-decoration:none;color:#5C6169;font-size:14px;font-weight:600;">Give feedback</a>
       </div>
-      <span style="font-size:12px;color:#8A8F98;">No sign-up needed — the prototype opens right in your browser.</span>
+
     </div>
     <img src="assets/product-shot.png" alt="Review Rescue dashboard showing an inbox of reviews with reply status badges" style="width:100%;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,0.12);display:block;"/>
   </div>
@@ -61,7 +61,7 @@
 
   <div style="background:#F3F3EF;padding:64px 24px;">
     <div style="max-width:1120px;margin:0 auto;">
-      <h2 style="font-size:26px;font-weight:700;text-align:center;margin:0 0 40px 0;">How it works</h2>
+      <h2 id="how-it-works" style="font-size:26px;font-weight:700;text-align:center;margin:0 0 40px 0;scroll-margin-top:24px;">How it works</h2>
       <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;">
         <sc-for list="{{ steps }}" as="step" hint-placeholder-count="3">
           <div style="display:flex;flex-direction:column;gap:10px;">
@@ -118,7 +118,7 @@
 
   <div style="max-width:1120px;margin:0 auto;padding:72px 24px;">
     <h2 style="font-size:26px;font-weight:700;text-align:center;margin:0 0 8px 0;">Simple pricing</h2>
-    <p style="text-align:center;color:#8A8F98;font-size:15px;margin:0 0 12px 0;">One location's worth of reviews shouldn't cost what enterprise tools charge.</p>
+    <p style="text-align:center;color:#8A8F98;font-size:15px;margin:0 0 12px 0;">You shouldn't pay enterprise prices to manage reviews for one location.</p>
     <p style="text-align:center;margin:0 0 12px 0;">
       <span style="font-size:13px;font-weight:700;color:#B33430;background:#FBEAE9;border-radius:999px;padding:6px 14px;">Early-access pricing — subject to change</span>
     </p>
@@ -145,7 +145,7 @@
         </div>
       </sc-for>
     </div>
-    <p style="text-align:center;color:#3D4147;font-weight:500;font-size:13px;margin:24px 0 0 0;max-width:640px;margin-left:auto;margin-right:auto;">Market context: review-management software commonly ranges from roughly $25–$125+ per month at entry level, with larger or more feature-rich platforms costing more. Review Rescue is intentionally positioned as a focused, simpler option for SMBs.</p>
+    <p style="text-align:center;color:#3D4147;font-weight:500;font-size:13px;margin:24px 0 0 0;max-width:640px;margin-left:auto;margin-right:auto;"><strong>Market context:</strong> review-management software commonly ranges from roughly $25–$125+ per month at entry level, with larger or more feature-rich platforms costing more. Review Rescue is intentionally positioned as a focused, simpler option for SMBs.</p>
   </div>
 
   <div style="background:#F3F3EF;padding:64px 24px;">
@@ -170,8 +170,12 @@
   <div id="waitlist" style="max-width:700px;margin:0 auto;padding:80px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;">
     <h2 style="font-size:28px;font-weight:700;margin:0;">Ready to test it?</h2>
     <p style="font-size:15px;color:#5C6169;margin:0;max-width:480px;">Open the prototype, test a couple of reviews, then tell us what you thought.</p>
-    <a href="Review Rescue Prototype.dc.html" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:15px;font-weight:700;padding:14px 26px;border-radius:10px;">Test the live prototype →</a>
-    <a href="#" style="text-decoration:none;color:#5C6169;font-size:14px;font-weight:600;">Give feedback</a>
+    <a href="https://claude.ai/artifact/BiaSpiQhVAL3uWxKw2Xtyf" target="_blank" rel="noopener" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:15px;font-weight:700;padding:14px 26px;border-radius:10px;">Test the live prototype →</a>
+    <div style="width:100%;max-width:480px;margin-top:24px;display:flex;flex-direction:column;align-items:center;gap:14px;background:#fff;border:1px solid #EEEFF1;border-radius:14px;padding:32px 28px;">
+      <span style="font-size:15px;font-weight:700;color:#2B2E33;">Give feedback</span>
+      <p style="font-size:14px;color:#5C6169;text-align:center;margin:0;max-width:360px;">Takes about 2 minutes. Opens in a new tab so your place here is saved.</p>
+      <a href="https://form.jotform.com/262598827423065" target="_blank" rel="noopener" style="text-decoration:none;background:#2E8B6F;color:#fff;font-size:15px;font-weight:700;padding:14px 26px;border-radius:10px;">Open the feedback form →</a>
+    </div>
     <div style="display:none;">
       <form onSubmit="{{ submitWaitlist }}" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:100%;max-width:480px;">
         <input value="{{ email }}" onChange="{{ updateEmail }}" type="email" required="{{ true }}" placeholder="you@yourbusiness.com" style="flex:1;min-width:220px;border:1px solid #EEEFF1;border-radius:10px;padding:14px 16px;font-size:15px;font-family:Inter,sans-serif;box-sizing:border-box;"/>
@@ -215,7 +219,7 @@ class Component extends DCLogic {
       { title: 'AI-drafted response', body: "A draft matched to the review's tone and situation, with one-tap regenerate if it misses the mark.", dotBg: '#2E8B6F' },
       { title: 'Acknowledgment tracking', body: 'Every draft records who opened and approved it, and when — separate from when it was actually sent.', dotBg: '#8A8F98' },
       { title: 'Escalation for sensitive reviews', body: 'Refund disputes, threats, or discrimination claims skip auto-drafting and escalate immediately, with follow-up alerts at 4 and 24 hours.', dotBg: '#B33430' },
-      { title: 'Star-only outreach', body: 'A low rating with no text still gets a proactive outreach draft instead of being treated as nothing to respond to.', dotBg: '#E8A33D' }
+      { title: 'Star-only outreach', body: 'A low rating with no text still gets a proactive outreach draft instead of being treated as nothing to respond to.', dotBg: '#3B6EA5' }
     ];
     const tiers = [
       { name: 'Starter', price: '$29', bg: '#FFFFFF', border: '1px solid #EEEFF1', perks: ['1 location', 'Instant SMS + email alerts', 'AI drafts, edit & send', 'Escalation for sensitive reviews'], textColor: '#2B2E33', priceSubColor: '#8A8F98', perkColor: '#5C6169', trialColor: '#1F6E54' },
@@ -226,7 +230,7 @@ class Component extends DCLogic {
       { q: 'Does it post directly to Google?', a: 'When the Google Business Profile API allows it, yes — otherwise you get a ready-to-paste response with one tap.' },
       { q: 'Will it ever send a response without me?', a: "No. Every response requires a human to open and approve it first — that's true even for the fastest drafts." },
       { q: 'What happens with a legally sensitive review?', a: "It skips auto-drafting entirely and escalates straight to you, with follow-up alerts if it sits unacknowledged." },
-      { q: 'Which review platforms does it support?', a: 'Google to start. Yelp and Facebook are planned next.' }
+      { q: 'Which review platforms does it support?', a: 'Google to start. Trustpilot and Yelp are planned next.' }
     ];
     const faqs = faqData.map((f, i) => ({ ...f, open: s.openFaq === i, icon: s.openFaq === i ? '–' : '+', onToggle: () => this.setState({ openFaq: s.openFaq === i ? -1 : i }) }));
     return {
